@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shithost_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - shithost_network
+
+  db:
+    image: mysql:8.0
+    container_name: shithost_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: shithost
+      MYSQL_USER: shithost_user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./tables.sql:/docker-entrypoint-initdb.d/tables.sql
+    networks:
+      - shithost_network
+
+volumes:
+  db_data:
+
+networks:
+  shithost_network:
+    driver: bridge

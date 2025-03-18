@@ -1,0 +1,88 @@
+body {
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+  
+  body[data-bs-theme="dark"] {
+    background-color: #212529;
+    color: #f8f9fa;
+  }
+  
+  h1 {
+    font-weight: bolder;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #212529;
+  }
+  
+  .card-body {
+    width: 100%; 
+  }
+  
+  body[data-bs-theme="dark"] .card {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+
+  body[data-bs-theme="dark"] .table {
+    background-color: #343a40;
+  }
+  
+  .drop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1.5rem;
+    visibility: hidden;
+    z-index: 10;
+  }
+  
+  .card.dragging .drop-overlay {
+    visibility: visible;
+  }
+  
+  
+  a {
+    text-decoration: none;
+    font-size: 0.8em;
+  }
+
+  a:hover {
+    border-bottom: 1px dotted;
+  }
+   
+
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #007bff;
+  }
+  
+  body[data-bs-theme="dark"] .theme-toggle {
+    color: #ffc107;
+  }
+  
+
+  .pipe {
+    color: #000000;
+  }
+  
+
+  @media (prefers-color-scheme: dark) {
+    .pipe {
+      color: #343a40; 
+    }
+  }
