@@ -10,6 +10,7 @@ services:
       - "8080:80"
     volumes:
       - ./src:/var/www/html
+      - ./logs:/var/log/shithost
     depends_on:
       - db
     networks:

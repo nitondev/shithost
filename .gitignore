@@ -25,3 +25,6 @@ docker-compose.override.yml
 .vscode/
 *.swp
 *.swo
+
+# Ignore logs directory
+logs/
