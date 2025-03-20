@@ -12,7 +12,6 @@ RUN a2enmod rewrite
 
 COPY ./src /var/www/html/
 
-CMD apache2-foreground
 
 RUN mkdir -p /var/log/shithost && \
     chmod -R 777 /var/log/shithost
