@@ -11,7 +11,7 @@ $result = $conn->query($query);
 ?>
 
 <div class="container"> 
-    <div class="card" id="upload-card" style="max-width: 800px; margin: 0 auto;"> 
+    <div class="card" style="max-width: 800px; margin: 0 auto;"> 
     <div class="card-body"> 
         <?php
             if ($result->num_rows === 0) {
