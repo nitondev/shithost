@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     $file_path = __DIR__ . '/files/' . $new_filename;
 
     if (file_exists($file_path)) {
-        // Ställ in headers för nedladdning
+        
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename="' . basename($original_filename) . '"');
@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
         header('Pragma: public');
         header('Content-Length: ' . filesize($file_path));
         
-        // Läs och skicka filen till användaren
+        
         readfile($file_path);
         exit();
     } else {

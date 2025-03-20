@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const responseDiv = document.getElementById("response");
     const uploadForm = document.getElementById("upload-form");
 
-    // Öppna filväljaren när man klickar på knappen
+    
     uploadButton.addEventListener("click", function () {
         fileInput.click();
     });
 
-    // När en fil väljs, skicka den via formuläret
+    
     fileInput.addEventListener("change", function () {
         if (fileInput.files.length > 0) {
             uploadFile(fileInput.files[0]);
