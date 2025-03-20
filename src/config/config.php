@@ -43,4 +43,11 @@ $enable_telegram  = false;
 $max_upload_size  = 50;  // Maximum file upload size in MB.
 $max_upload_hours = 24;  // Maximum time files are stored.
 
+// Allowed File Types
+$allowedTypes = [
+    'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'image/bmp', 'image/tiff', 'image/svg+xml',
+    'audio/mpeg', 'audio/wav', 'audio/ogg', 'audio/flac', 'audio/aac',
+    'application/pdf'
+];
+
 ?>

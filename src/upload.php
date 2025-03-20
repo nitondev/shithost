@@ -1,5 +1,6 @@
 <?php
 include('config/connect.php');
+include('config/config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
@@ -9,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
     $fileSize = $_FILES['file']['size']; 
     $fileType = $_FILES['file']['type']; 
 
-    $allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'application/pdf', 'audio/mpeg', 'video/mp4'];
 
     if (in_array($fileType, $allowedTypes)) {
         $fileHash = hash_file('sha256', $fileTmpName);
