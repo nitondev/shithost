@@ -4,6 +4,7 @@ $siteTitle = "Shared File";
 
 include("templates/header.php");
 include("config/timeformat.php");
+include("config/sizeformat.php");
 
 ?>
 
@@ -32,7 +33,7 @@ if ($result->num_rows > 0) {
 
     echo "<h5 class=\"card-title\">File Information</h5>\n";
     echo "<p class=\"text-start\"><strong>Filename:</strong> " . htmlspecialchars($original_filename) . "</p>\n";
-    echo "<p class=\"text-start\"><strong>File Size:</strong> " . number_format($file_size / 1024, 2) . " KB</p>\n"; 
+    echo "<p class=\"text-start\"><strong>File Size:</strong> " . formatFileSize($row['file_size']) . "</p>\n"; 
     echo "<p class=\"text-start\"><strong>Uploaded:</strong> " . timeAgo($upload_time) . " ago</p>\n";
     echo "<p class=\"text-start\"><strong>SHA256:</strong> " . htmlspecialchars($file_hash) . "</p>\n";
 

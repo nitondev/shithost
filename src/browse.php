@@ -4,6 +4,7 @@ $siteTitle = "Browse files";
 
 include("templates/header.php");
 include("config/timeformat.php");
+include("config/sizeformat.php");
 
 $query = "SELECT original_filename, file_size, upload_time, short_url, uploader FROM uploaded_files ORDER BY upload_time DESC";
 $result = $conn->query($query);
@@ -24,7 +25,7 @@ $result = $conn->query($query);
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td><a href='share.php?s=" . htmlspecialchars($row['short_url']) . "'>" . htmlspecialchars($row['original_filename']) . "</a></td>";
-                    echo "<td>" . number_format($row['file_size'] / 1024, 2) . " KB</td>";
+                    echo "<td>" . formatFileSize($row['file_size']) . "</td>";
                     echo "<td>" . timeAgo($row['upload_time']) . "</td>";
                     echo "<td><i class=\"bi bi-person-fill\"></i> " . htmlspecialchars($row['uploader']) . "</td>"; 
                     echo "</tr>";
